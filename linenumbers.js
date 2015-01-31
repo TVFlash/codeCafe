@@ -66,6 +66,7 @@
    {
 
          var result;
+         var answer = 12;
          if(typeof(input) === 'string')
          {
             result = input;
@@ -79,7 +80,13 @@
             result = eval(String(input))
          }
          $("#rightText").val($("#rightText").val() +"\n"+ ">: "+result);
-         dispRepeat = input;
+         /** Check the user response against the answer **/
+         if(result == answer){
+            alert("Congrats!");
+         }
+         else {
+            alert("Oops, it looks like you had " + result + " instead of " + answer);
+         }
          scrollBottom();
    }
    function scrollBottom(){
