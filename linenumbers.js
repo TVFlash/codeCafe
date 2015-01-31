@@ -50,10 +50,10 @@
    
       
    }
-var dispRepeat = '';
+var dispRepeat = '12321321321321321';
    function runData()
    {
-      dispRepeat = '';
+      dispRepeat = '32132132132132131';
       localStorage["codeCafe_text"] = $("#codeTextarea").val();
       console.log($("#codeTextarea").val())
       var result = eval(String($("#codeTextarea").val()))
@@ -66,13 +66,18 @@ var dispRepeat = '';
 
 
    
-   function print(input)
+   function Print(input)
    {
       if(dispRepeat != input)
       {
          var result;
-         if(typeof(input) == 'string')
+         if(typeof(input) === 'string')
          {
+            result = input;
+         }
+         else if(typeof(input) === 'boolean')
+         {
+            console.log("Boolean: "+input)
             result = input;
          }
          else {
