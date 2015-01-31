@@ -66,9 +66,10 @@
    {
 
          var result;
+         var answer = "Hello";
          if(typeof(input) === 'string')
          {
-            result = input;
+            result = input.trim();
          }
          else if(typeof(input) === 'boolean')
          {
