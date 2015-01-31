@@ -49,6 +49,6 @@
 
    function runData()
    {
-      console.log($("#codeTextarea").val())
-      eval($("#codeTextarea").val())
+      console.log($("#codeTextarea").val().trim())
+      console.log(eval($("#codeTextarea").val()))
    }
