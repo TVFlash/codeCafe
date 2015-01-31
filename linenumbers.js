@@ -83,5 +83,5 @@
          scrollBottom();
    }
    function scrollBottom(){
-    $("#rightText").animate({ scrollTop: "+=20" },10);
+    $("#rightText").animate({ scrollTop: "+=20" },1);
    }
