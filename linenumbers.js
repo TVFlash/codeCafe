@@ -55,6 +55,7 @@
    {
       localStorage["codeCafe_text"] = $("#codeTextarea").val();
       console.log($("#codeTextarea").val())
-      eval(String($("#codeTextarea").val()))
+      var result = eval(String($("#codeTextarea").val()))
       console.log(eval($("#codeTextarea").val().trim()))
+      $("#rightText").val($("#rightText").val() +"&#10"+ result)
    }

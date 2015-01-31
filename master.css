@@ -3,6 +3,7 @@
    height: 100%;
    padding: none;
    margin: 0;
+   overflow: hidden;
  }
 .leftSide {
    width: 50%;
@@ -14,6 +15,17 @@
    float: left;
    background: #010101;
    
+}
+#rightText {
+   padding-left: 5px;
+   width: 95%;
+   background : 0;
+   color: chartreuse;
+   text-align: left;
+   border: 0;
+   resize: none;
+   min-height: 85%;
+   overflow-x: hidden;
 }
 .rightSide img {
    width: 100%;
