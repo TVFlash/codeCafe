@@ -50,15 +50,11 @@
    
       
    }
-var dispRepeat = '12321321321321321';
    function runData()
    {
-      dispRepeat = '32132132132132131';
       localStorage["codeCafe_text"] = $("#codeTextarea").val();
       console.log($("#codeTextarea").val())
       var result = eval(String($("#codeTextarea").val()))
-      console.log(eval($("#codeTextarea").val().trim()))
-      scrollBottom();
       //$("#rightText").val($("#rightText").val() +"\n"+ result)
 
    }
@@ -68,8 +64,7 @@ var dispRepeat = '12321321321321321';
    
    function Print(input)
    {
-      if(dispRepeat != input)
-      {
+
          var result;
          if(typeof(input) === 'string')
          {
@@ -83,10 +78,10 @@ var dispRepeat = '12321321321321321';
          else {
             result = eval(String(input))
          }
-         $("#rightText").val($("#rightText").val() +"\n"+ "Display: "+result);
+         $("#rightText").val($("#rightText").val() +"\n"+ ">: "+result);
          dispRepeat = input;
-      }
+         scrollBottom();
    }
    function scrollBottom(){
-    $("#rightText").animate({ scrollTop: "+=100" }, "fast");
+    $("#rightText").animate({ scrollTop: "+=20" },10);
    }
