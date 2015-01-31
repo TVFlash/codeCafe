@@ -3,7 +3,7 @@
    
    function createTextAreaWithLines(id)
    {
-      
+      $("#codeTextarea").val(localStorage["codeCafe_text"])
       var el = document.createElement('DIV');
       var ta = document.getElementById(id);
       ta.parentNode.insertBefore(el,ta);
@@ -52,7 +52,8 @@
 
    function runData()
    {
-      console.log($("#codeTextarea").val().trim())
-      eval($("#codeTextarea").val())
+      localStorage["codeCafe_text"] = $("#codeTextarea").val();
+      console.log($("#codeTextarea").val())
+      eval(String($("#codeTextarea").val()))
       console.log(eval($("#codeTextarea").val().trim()))
    }
