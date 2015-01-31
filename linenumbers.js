@@ -86,3 +86,9 @@
    function scrollBottom(){
     $("#rightText").animate({ scrollTop: "+=20" },1);
    }
+
+   $( window ).resize(function() {
+      localStorage["codeCafe_text"] = $("#codeTextarea").val();
+      $(".leftSide").html('<textarea id="codeTextarea"></textarea><button id="submit" onclick="runData()" type="button">Run | Save</button>')
+     createTextAreaWithLines('codeTextarea');
+   });
