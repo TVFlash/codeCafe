@@ -66,12 +66,18 @@ var dispRepeat = '';
 
 
    
-   function disp(input)
+   function print(input)
    {
       if(dispRepeat != input)
       {
-         var result = eval(String(input))
-         console.log("Display result: "+result)
+         var result;
+         if(typeof(input) == 'string')
+         {
+            result = input;
+         }
+         else {
+            result = eval(String(input))
+         }
          $("#rightText").val($("#rightText").val() +"\n"+ "Display: "+result);
          dispRepeat = input;
       }
