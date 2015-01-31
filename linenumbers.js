@@ -50,12 +50,32 @@
    
       
    }
-
+var dispRepeat = '';
    function runData()
    {
+      dispRepeat = '';
       localStorage["codeCafe_text"] = $("#codeTextarea").val();
       console.log($("#codeTextarea").val())
       var result = eval(String($("#codeTextarea").val()))
       console.log(eval($("#codeTextarea").val().trim()))
-      $("#rightText").val($("#rightText").val() +"\n"+ result)
+      scrollBottom();
+      //$("#rightText").val($("#rightText").val() +"\n"+ result)
+
+   }
+
+
+
+   
+   function disp(input)
+   {
+      if(dispRepeat != input)
+      {
+         var result = eval(String(input))
+         console.log("Display result: "+result)
+         $("#rightText").val($("#rightText").val() +"\n"+ "Display: "+result);
+         dispRepeat = input;
+      }
+   }
+   function scrollBottom(){
+    $("#rightText").animate({ scrollTop: "+=100" }, "fast");
    }

@@ -25,7 +25,7 @@
    border: 0;
    resize: none;
    min-height: 85%;
-   overflow-x: hidden;
+   overflow: hidden;
 }
 #rightText:focus {
    outline: none;
