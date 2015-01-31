@@ -8,7 +8,7 @@
       var ta = document.getElementById(id);
       ta.parentNode.insertBefore(el,ta);
       el.appendChild(ta);
-      
+      $("#codeTextarea").css("height", (document.body.clientHeight - $("#submit").css("height").split("px")[0]*2+5) + 'px');     
       el.className='textAreaWithLines';
       el.style.width = (ta.offsetWidth + 30) + 'px';
       ta.style.position = 'absolute';
@@ -31,6 +31,7 @@
          string = string + no;
       }
       $("#codeTextarea").css("width", (document.body.clientWidth / 2 - 60) + 'px');
+
       $(".textAreaWithLines").css("width", (document.body.clientWidth / 2 - 1) + 'px');
       $(".displayText").css("height", (document.body.clientHeight - $("#header").css("height").split("px")[0] - 5) + "px")
       ta.onkeydown = function() { positionLineObj(lineObj,ta); };
