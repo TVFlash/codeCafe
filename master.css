@@ -27,6 +27,10 @@
    min-height: 85%;
    overflow-x: hidden;
 }
+#rightText:focus {
+   outline: none;
+
+}
 .rightSide img {
    width: 100%;
 }
