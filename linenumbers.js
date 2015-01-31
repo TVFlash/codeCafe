@@ -3,6 +3,7 @@
    
    function createTextAreaWithLines(id)
    {
+      
       var el = document.createElement('DIV');
       var ta = document.getElementById(id);
       ta.parentNode.insertBefore(el,ta);
@@ -29,7 +30,9 @@
          if(string.length>0)string = string + '<br>';
          string = string + no;
       }
-      
+      $("#codeTextarea").css("width", (document.body.clientWidth / 2 - 60) + 'px');
+      $(".textAreaWithLines").css("width", (document.body.clientWidth / 2 - 1) + 'px');
+      $(".displayText").css("height", (document.body.clientHeight - $("#header").css("height").split("px")[0] - 5) + "px")
       ta.onkeydown = function() { positionLineObj(lineObj,ta); };
       ta.onmousedown = function() { positionLineObj(lineObj,ta); };
       ta.onscroll = function() { positionLineObj(lineObj,ta); };
@@ -50,5 +53,6 @@
    function runData()
    {
       console.log($("#codeTextarea").val().trim())
+      eval($("#codeTextarea").val())
       console.log(eval($("#codeTextarea").val().trim()))
    }
