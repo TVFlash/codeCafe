@@ -46,3 +46,9 @@
    
       
    }
+
+   function runData()
+   {
+      console.log($("#codeTextarea").val())
+      eval($("#codeTextarea").val())
+   }
