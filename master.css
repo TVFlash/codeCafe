@@ -38,7 +38,7 @@
 }
 .displayText {
    background: #010101;
-   height: 50%;
+   height: 100%;
    width: 100%;
 }
 
@@ -60,8 +60,12 @@
 }
 
 #run {
+  background: #e0efe0;
   float: left;
-  width: 70%;
+  width: 55%;
+}
+#run:hover {
+  background: #c3efc3;
 }
 
 #save {
@@ -70,6 +74,10 @@
 }
 
 #dark {
+  float: left;
+  width: 15%;
+}
+#clear {
   float: left;
   width: 15%;
 }

@@ -13,7 +13,18 @@
 
   function runData() {
     save();
-    var result = eval(String(myCodeMirror.getValue()));
+            try {
+                var result = eval(String(myCodeMirror.getValue()));
+            } catch (e) {
+                console.log(e);
+                result = e.message;
+    $("#rightText").val($("#rightText").val() +"\n"+ ">: "+result);
+
+            }
+  }
+
+  function clearS() {
+        $("#rightText").val("");
   }
 
   function Print(input) {
@@ -34,7 +45,7 @@
   }
 
   window.print = Print;
-
+  window.clear = clearS;
   function switchTheme() {
     var theme = localStorage.getItem("theme");
 
