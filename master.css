@@ -6,6 +6,7 @@
    overflow: hidden;
  }
 .leftSide {
+   height: 100%;
    width: 50%;
    float: left;
 }
@@ -16,6 +17,7 @@
    background: #010101;
    
 }
+
 #rightText {
    padding-left: 5px;
    width: 95%;
@@ -39,32 +41,35 @@
    height: 50%;
    width: 100%;
 }
- #codeTextarea{
-      width: 100%;
-      height:95%;
-   }
-   #codeTextarea:focus {
-      outline: none;
-   }
-   .textAreaWithLines{
-      width: auto;
-      font-family:courier;      
-      border:1px solid #7f8c8d;
-      
-   }
-   .textAreaWithLines textarea,.textAreaWithLines div{
-      border:0px;
-      line-height:120%;
-      font-size:12px;
-   }
-   .lineObj{
-      color:#2c3e50;
-   }
 
-   #submit {
-      color: #444;
-      width: 100%;
-      background: #ececec;
-      border: none;
-      box-shadow: 0px 0px 0px 1px #dcdcdc;
-   }
+.button {
+  color: #444;
+  height: 5%;
+  width: 100%;
+  background: #ececec;
+  border: none;
+  outline: none;
+ -webkit-user-select: none; /* Chrome/Safari */        
+ -moz-user-select: none; /* Firefox */
+ -ms-user-select: none; /* IE10+ */
+ box-shadow: 0px 0px 0px 1px #dcdcdc;
+}
+
+.button:hover {
+  background: #bcbcbc;
+}
+
+#run {
+  float: left;
+  width: 70%;
+}
+
+#save {
+  float: left;
+  width: 15%;
+}
+
+#dark {
+  float: left;
+  width: 15%;
+}
