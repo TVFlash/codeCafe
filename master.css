@@ -5,6 +5,17 @@
    margin: 0;
    overflow: hidden;
  }
+ 
+ .windows {
+	height: 95%;
+	width: 100%;
+ }
+ 
+ .button-bar {
+	height: 5%;
+	width: 100%;
+ }
+ 
 .leftSide {
    height: 100%;
    width: 50%;
@@ -15,19 +26,20 @@
    height: 100%;
    float: left;
    background: #010101;
-   
+   border-bottom: 1px solid #010101;
 }
 
 #rightText {
    padding-left: 5px;
-   width: 95%;
-   background : 0;
+   width: 98%;
+   background: #010101;
    color: chartreuse;
    text-align: left;
    border: 0;
    resize: none;
-   min-height: 85%;
+   height: 98%;
    overflow: hidden;
+   border-bottom: 1px solid black;
 }
 #rightText:focus {
    outline: none;
@@ -36,15 +48,10 @@
 .rightSide img {
    width: 100%;
 }
-.displayText {
-   background: #010101;
-   height: 100%;
-   width: 100%;
-}
 
 .button {
   color: #444;
-  height: 5%;
+  height: 100%;
   width: 100%;
   background: #ececec;
   border: none;
@@ -59,25 +66,42 @@
   background: #bcbcbc;
 }
 
+#save {
+  float: left;
+  width: 7.125%;
+}
+
 #run {
   background: #e0efe0;
   float: left;
-  width: 55%;
-}
-#run:hover {
-  background: #c3efc3;
+  width: 26.125%;
 }
 
-#save {
+#clearIDE{
   float: left;
-  width: 15%;
+  width: 7.125%;
 }
 
 #dark {
   float: left;
-  width: 15%;
+  width: 7.125%;
 }
-#clear {
+
+#fontInc {
+	float: left;
+	width: 2.5%;
+}
+
+#fontDec {
+	float: left;
+	width: 2.5%;
+}
+
+#clearTerminal {
   float: left;
-  width: 15%;
+  width: 47.5%;
+}
+
+#run:hover {
+  background: #c3efc3;
 }
