@@ -13,16 +13,33 @@
 		myCodeMirror.focus();
 	}
 
+  function removeIframe() {
+    $('#iframe').remove();
+  }
+
 	function runData() {
 		save();
-		try {
-			var result = eval(String(myCodeMirror.getValue()));
-		} catch (e) {
-			console.log(e);
-			result = e.message;
-			$("#rightText").val($("#rightText").val() +"\n"+ ">: "+result);
-		}
+    removeIframe();
+    $('<iframe />');  // Create an iframe element
+    $('<iframe />', {
+      id: 'iframe',
+      src: 'iframe.html'
+    }).appendTo('body');
+
+    $('body').append('<button class="remove" onclick="removeFrame();">Remove</button><div class="cover"></div>');
+
+    setTimeout(function() {
+      $('#iframe').contents().find('#canvasScript').html(myCodeMirror.getValue());
+      $('#iframe').focus();
+    }, 300);
+
 	}
+
+  function removeFrame() {
+    removeIframe();
+    $('.cover').remove();
+    $('.remove').remove();
+  }
 
 	function clearIDE() {
 		myCodeMirror.setValue("");
@@ -30,30 +47,6 @@
 		myCodeMirror.focus();
 	}
 	
-	function clearTerminal() {
-		$("#rightText").val("");
-		
-		myCodeMirror.focus();
-	}
-
-	function Print(input) {
-		var result;
-		var answer = "Hello";
-	
-		if (typeof(input) === 'string') {
-			result = input.trim();
-		} else if(typeof(input) === 'boolean') {
-			console.log("Boolean: "+input)
-			result = input;
-		} else {
-			result = eval(String(input))
-		}
-     
-		$("#rightText").val($("#rightText").val() +"\n"+ ">: "+result);
-		dispRepeat = input;
-		$("#rightText").animate({ scrollTop: "+=200"},1);
-	}
-
 	function switchTheme() {
 		var theme = localStorage.getItem("theme");
 
@@ -91,5 +84,3 @@
 		myCodeMirror.refresh();
 		myCodeMirror.focus();
 	}
-  
-	window.print = Print;
