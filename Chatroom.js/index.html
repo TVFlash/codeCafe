@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Flash chat</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 13px Helvetica, Arial; }
+      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+      form button { width: 9%; background: #C0C0C2; border: none; padding: 10px; }
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages li { padding: 5px 10px; }
+      #messages li:nth-child(odd) { background: #eee; }
+    </style>
+  </head>
+  <body>
+    <ul id="messages"></ul>
+    <form action="">
+      <input id="msg" autocomplete="off" /><button>Send</button>
+    </form>
+    <!-We need to include Socket.io and JQuery libraries->
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+      //Open a new socket
+      var socket = io();
+      //When our send button is pressed
+      $('form').submit(function(){
+        //Get the message from the msg textfeild and Emit it to the socket
+        socket.emit('chat message', $('#msg').val());
+        //Clear the textfield
+        $('#msg').val('');
+        return false;
+      });
+
+      //When we recive a chat message, add it to the list element
+      socket.on('chat message', function(msg){
+        $('#messages').append($('<li>').text(msg));
+      });
+    </script>
+  </body>
+</html>
