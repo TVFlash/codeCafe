@@ -11,8 +11,11 @@ app.get('/',function(req, res){
 //When our socket has a new connection (someone accesses the page)
 io.on('connection', function(socket){
   //We want to emit a 'chat message' to all thoses connected to our socket
+  //Each message will be in the format [User] : <Message>
   socket.on('chat message', function(msg){
-    if(msg != "") //We don't want to send empty messages
+    //Break the string on the first ":" to see if message is empty
+    var msgSub = msg.split(":")[1];
+    if(msgSub != " ") //We don't want to send empty messages
       io.emit('chat message', msg);
   });
 });

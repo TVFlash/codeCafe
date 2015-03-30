@@ -5,15 +5,16 @@
     <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body { font: 13px Helvetica, Arial; }
-      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+      form { background: #C0C0C2; padding: 3px; position: fixed; bottom: 0; width: 100%; }
       form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
-      form button { width: 9%; background: #C0C0C2; border: none; padding: 10px; }
+      form button { width: 9%; background: #3498db; border: none; padding: 10px; }
       #messages { list-style-type: none; margin: 0; padding: 0; }
       #messages li { padding: 5px 10px; }
       #messages li:nth-child(odd) { background: #eee; }
     </style>
   </head>
   <body>
+    <!-Messages will start out as an empty list->
     <ul id="messages"></ul>
     <form action="">
       <input id="msg" autocomplete="off" /><button>Send</button>
@@ -22,12 +23,13 @@
     <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
+      var name = prompt("Please enter a nickname");
       //Open a new socket
       var socket = io();
       //When our send button is pressed
       $('form').submit(function(){
         //Get the message from the msg textfeild and Emit it to the socket
-        socket.emit('chat message', $('#msg').val());
+        socket.emit('chat message', name + " : " + $('#msg').val());
         //Clear the textfield
         $('#msg').val('');
         return false;
